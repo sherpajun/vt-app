@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Button} from "@mui/material";
+// import LabelBottomNavigation from "./component/BottomNavi";
+import {Link, Routes,Route} from 'react-router-dom';
+import First from "./view/First";
+import LabelBottomNavigation from "./component/BottomNavi";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App=()=>{
+  return(
+      <div>
+          hello
+          <Button component={Link} to= '/first' >다음페이지</Button>
+          <Routes>
+              <Route path="/label" element={<LabelBottomNavigation />} />
+              <Route path="/first" element={<First />} />
+          </Routes>
+      </div>
+  )
 }
-
-export default App;
+export default  App;
